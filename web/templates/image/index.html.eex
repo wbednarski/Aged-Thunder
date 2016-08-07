@@ -1,0 +1,30 @@
+<h2>Listing images</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Desc</th>
+      <th>Attachment</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for image <- @images do %>
+    <tr>
+      <td><%= image.name %></td>
+      <td><%= image.desc %></td>
+      <td><img src="<%= AgedThunder.Attachment.url({image.attachment, image}) %>" alt="<%= image.name %>" width="400" /></td>
+
+      <td class="text-right">
+        <%= link "Show", to: image_path(@conn, :show, image), class: "btn btn-default btn-xs" %>
+        <%= #link "Edit", to: image_path(@conn, :edit, image), class: "btn btn-default btn-xs" %>
+        <%= #link "Delete", to: image_path(@conn, :delete, image), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New image", to: image_path(@conn, :new) %>

@@ -1,0 +1,23 @@
+<h2>Show image</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @image.name %>
+  </li>
+
+  <li>
+    <strong>Desc:</strong>
+    <%= @image.desc %>
+  </li>
+
+  <li>
+    <strong>Attachment:</strong>
+    <img src="<%= AgedThunder.Attachment.url({@image.attachment, @image}) %>" alt="<%= @image.name %>" />
+  </li>
+
+</ul>
+
+<%= #link "Edit", to: image_path(@conn, :edit, @image) %>
+<%= link "Back", to: image_path(@conn, :index) %>

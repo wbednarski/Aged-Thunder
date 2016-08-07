@@ -12,8 +12,8 @@ config :logger, level: :warn
 # Configure your database
 config :aged_thunder, AgedThunder.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "whispers",
+  password: "",
   database: "aged_thunder_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

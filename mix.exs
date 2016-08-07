@@ -19,7 +19,7 @@ defmodule AgedThunder.Mixfile do
   def application do
     [mod: {AgedThunder, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :ex_aws, :httpoison]]
   end
 
   # Specifies which paths to compile per environment.
@@ -37,7 +37,13 @@ defmodule AgedThunder.Mixfile do
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:arc, "~> 0.5.2"},
+     {:arc_ecto, "~> 0.4.3"},
+     {:ex_aws, "~> 0.4.10"},
+     {:httpoison, "~> 0.7"},
+     {:poison, "~> 1.2"},
+     {:uuid, "~> 1.1"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
@@ -51,4 +57,5 @@ defmodule AgedThunder.Mixfile do
      "ecto.reset": ["ecto.drop", "ecto.setup"],
      "test": ["ecto.create --quiet", "ecto.migrate", "test"]]
   end
+
 end

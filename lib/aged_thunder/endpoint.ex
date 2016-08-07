@@ -25,7 +25,8 @@ defmodule AgedThunder.Endpoint do
   plug Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json],
     pass: ["*/*"],
-    json_decoder: Poison
+    json_decoder: Poison,
+    length: 5_242_880 # TODO handle exceptions nicely
 
   plug Plug.MethodOverride
   plug Plug.Head
