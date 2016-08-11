@@ -2,7 +2,9 @@ export const Image = {
 
   init() {
     let input = document.getElementById('image_attachment'); // TODO Fix phoenix naming from _ to -
-    input.addEventListener('change', (e) => this.readURL(e.target));
+    if (input) {
+      input.addEventListener('change', (e) => this.readURL(e.target));  
+    }
   },
 
   readURL(input) {
